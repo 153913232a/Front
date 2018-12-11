@@ -1,33 +1,30 @@
 <template>
-    <div class="m-header">
-      <el-row :gutter="0">
-        <el-col :span="8">
-          <geo/>
-        </el-col>
-        <el-col :span="6">
-          <user/>
-        </el-col>
-        <el-col :span="10">
-          <nav-bar/>
-        </el-col>
-      </el-row>
-    </div>
+   <div class="m-header">
+     <el-row>
+       <el-col>
+         <top-bar></top-bar>
+       </el-col>
+     </el-row>
+     <el-row>
+       <el-col>
+         <search-bar></search-bar>
+       </el-col>
+     </el-row>
+   </div>
 </template>
 
 <script>
-  import Geo from './geo';
-  import User from "./user";
-  import NavBar from "./nav";
+  import topBar from './topbar'
+  import searchBar from './searchbar'
   export default {
-      components: {
-        NavBar,
-        User,
-        Geo
-      }
+    name: "index",
+    components: {
+      topBar,
+      searchBar
+    }
   }
 </script>
 
-<style lang="scss">
-   @import "../../../assets/css/public/layout.scss";
-   @import "../../../assets/css/public/header/index.scss";
+<style scoped>
+  @import "../../../assets/css/public/header/index.scss";
 </style>
